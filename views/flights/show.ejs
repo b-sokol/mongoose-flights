@@ -31,5 +31,14 @@
         </label><br>
         <input type="submit" value="Add Destination">
 </form>
+<h2>Tickets: </h2>
+<% if(tickets) { %>
+<% tickets.forEach((t) => { %>
+<div>Seat: <%=t.seat%></div>
+<div>Price: $<%=t.price%></div>
+<% }); %>
+<% } else { %>
+<h5>No Tickets Yet</h5>
+<% } %>
 <a href="/flights/<%=flight.id%>/tickets/new">Add Ticket</a>
 <%- include('../partials/footer') %>
